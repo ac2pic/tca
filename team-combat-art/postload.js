@@ -36,6 +36,26 @@ ig.module("game.feature.team-combat-art").defines(function() {
         }
     });
 
+    function groupCloseEnemies(maxRadius = 6) {
+        
+    }
+
+
+    function getInRange(entity, box, ignoreEntity = false, ignoreList = []) {
+        let {x,y,z} = entity.coll.pos;
+        
+        return ig.game.physics.getEntitiesInRectangle(x, y, z, box.x, box.y, box.z, ignoreEntity ? entity : null, ignoreList);
+    }
+    
+
+    /* members
+    // reset positions entity.resetPos
+
+    // find best position to move to
+    ig.CollMapTools.isTileBlocked(ig.game.levels[0].collision.getTile(480,500))
+    ig.game.getEntitiesInRectangle(x, y, z, width, length, height, ignoreEntity, ignoreEntities, withinBounds);
+    */
+
     /*
     // make them do nothing
     sc.combat.activeCombatants[sc.COMBATANT_PARTY.ENEMY].map(enemy => enemy.changeState("TEAM_COMBO", true))
